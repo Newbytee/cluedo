@@ -329,6 +329,10 @@ body {
     position: absolute;
 }
 
+.gamePieceImage {
+    height: 40px;
+}
+
 #gameBoard {
     height: 100vh;
 }
