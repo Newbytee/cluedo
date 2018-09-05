@@ -1,0 +1,10 @@
+{
+  "short_name": "Cluedo",
+  "name": "Bootleg Cluedo",
+  "start_url": "/cluedo/",
+  "display": "standalone",
+  "lang": "English",
+  "orientation": "landscape",
+  "theme_color": "#e0f2f2",
+  "background_color": "#e0f2f2"
+}
