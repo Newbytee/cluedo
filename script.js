@@ -41,3 +41,14 @@ function dragElement(element) {
         document.onmousemove = null;
     }
 }
+
+if (navigator.serviceWorker.controller) {
+    console.log("[SW Installer] Active service worker found, no need to register");
+} else {
+    //Register the ServiceWorker
+    navigator.serviceWorker.register("sw.js", {
+        scope: "./"
+    }).then(function(reg) {
+        console.log("[SW Installer] Service worker has been registered for scope: "+ reg.scope);
+    });
+}
