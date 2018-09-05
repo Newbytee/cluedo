@@ -329,6 +329,19 @@ body {
     position: absolute;
 }
 
+.gamePiece:nth-of-type(1) {
+    left: 39%;
+}
+
+.gamePiece:nth-of-type(2) {
+    left: 58%;
+}
+
+.gamePiece:nth-of-type(3) {
+    left: 72%;
+    top: 27%;
+}
+
 .gamePieceImage {
     height: 5vh;
 }

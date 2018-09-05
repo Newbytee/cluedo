@@ -3,10 +3,10 @@
 const gamePieces = document.getElementsByClassName("gamePiece");
 
 for (let i = 0; i < gamePieces.length; i++) {
-    dragElement(gamePieces[i]);
+    dragElement(gamePieces[i], i);
 }
 
-function dragElement(element) {
+function dragElement(element, iterator) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
     element.onmousedown = dragMouseDown;
@@ -39,6 +39,8 @@ function dragElement(element) {
         /* stop moving when mouse button is released:*/
         document.onmouseup = null;
         document.onmousemove = null;
+        localStorage.setItem("gamePieceTop" + iterator, element.style.top);
+        localStorage.setItem("gamePieceLeft" + iterator, element.style.left);
     }
 }
 
@@ -51,4 +53,11 @@ if (navigator.serviceWorker.controller) {
     }).then(function(reg) {
         console.log("[SW Installer] Service worker has been registered for scope: "+ reg.scope);
     });
+}
+
+for (let i = 0; i < gamePieces.length; i++) {
+    if (localStorage.getItem("gamePieceTop" + i)) {
+        gamePieces[i].style.top = localStorage.getItem("gamePieceTop" + i);
+        gamePieces[i].style.left = localStorage.getItem("gamePieceLeft" + i);
+    }
 }
