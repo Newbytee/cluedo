@@ -61,3 +61,13 @@ for (let i = 0; i < gamePieces.length; i++) {
         gamePieces[i].style.left = localStorage.getItem("gamePieceLeft" + i);
     }
 }
+
+document.addEventListener("keydown", function(event) {
+    console.log(event.code);
+    if (event.code === "KeyR") {
+        if (confirm("Are you sure you want to reset positions?")) {
+            localStorage.clear();
+            location.reload();
+        }
+    }
+});
